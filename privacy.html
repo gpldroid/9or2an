@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - القرآن الكريم</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+            min-height: 100vh;
+            color: #ecf0f1;
+        }
+
+        .header {
+            background: rgba(0,0,0,0.3);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-decoration: none;
+            font-family: 'Amiri', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ffd700;
+            background: rgba(255,215,0,0.1);
+        }
+
+        .main-content {
+            max-width: 900px;
+            margin: 100px auto 50px;
+            padding: 2rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title h1 {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-family: 'Amiri', serif;
+        }
+
+        .page-title .underline {
+            width: 100px;
+            height: 3px;
+            background: #ffd700;
+            margin: 0 auto;
+        }
+
+        /* محتوى السياسة */
+        .privacy-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 30px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .privacy-section h2 {
+            color: #ffd700;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255,215,0,0.3);
+        }
+
+        .privacy-section h3 {
+            color: #ecf0f1;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .privacy-section p {
+            color: #bdc3c7;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-section ul {
+            color: #bdc3c7;
+            padding-right: 2rem;
+            margin: 1rem 0;
+        }
+
+        .privacy-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .privacy-section .highlight {
+            background: rgba(255,215,0,0.1);
+            border-right: 4px solid #ffd700;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 15px 15px 0;
+        }
+
+        /* بطاقات الموافقة */
+        .consent-box {
+            background: rgba(255,255,255,0.03);
+            border: 2px solid rgba(255,215,0,0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .consent-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .consent-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .consent-btn.accept {
+            background: #ffd700;
+            color: #2c3e50;
+        }
+
+        .consent-btn.accept:hover {
+            background: #f1c40f;
+            transform: scale(1.05);
+        }
+
+        .consent-btn.decline {
+            background: transparent;
+            color: #ecf0f1;
+            border: 2px solid #e74c3c;
+        }
+
+        .consent-btn.decline:hover {
+            background: #e74c3c;
+        }
+
+        /* تاريخ التحديث */
+        .update-date {
+            text-align: left;
+            color: #ffd700;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,215,0,0.2);
+        }
+
+        .footer {
+            background: rgba(0,0,0,0.3);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            color: #bdc3c7;
+        }
+
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            
+            .consent-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">القرآن الكريم</a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="contact.html">اتصل بنا</a>
+                <a href="privacy.html" class="active">الخصوصية</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="page-title">
+            <h1>سياسة الخصوصية</h1>
+            <div class="underline"></div>
+        </div>
+
+        <!-- مقدمة -->
+        <div class="privacy-section">
+            <p>نحن في <strong style="color: #ffd700;">القرآن الكريم</strong> نلتزم بحماية خصوصيتك وبياناتك الشخصية. توضح هذه السياسة كيفية جمع واستخدام وحماية معلوماتك عند استخدام منصتنا.</p>
+            <div class="highlight">
+                <strong>آخر تحديث:</strong> ٢٥ فبراير ٢٠٢٥
+            </div>
+        </div>
+
+        <!-- المعلومات التي نجمعها -->
+        <div class="privacy-section">
+            <h2>📊 المعلومات التي نجمعها</h2>
+            
+            <h3>معلومات تلقائية:</h3>
+            <ul>
+                <li>عنوان IP الخاص بجهازك</li>
+                <li>نوع المتصفح وإصداره</li>
+                <li>الصفحات التي تزورها وتفاعلك معها</li>
+                <li>تاريخ ووقت الزيارة</li>
+                <li>اللغة المفضلة</li>
+            </ul>
+
+            <h3>معلومات طوعية:</h3>
+            <ul>
+                <li>الاسم عند التسجيل في النشرة البريدية</li>
+                <li>البريد الإلكتروني عند مراسلتنا</li>
+                <li>الرسائل والاستفسارات التي ترسلها</li>
+            </ul>
+        </div>
+
+        <!-- كيفية استخدام المعلومات -->
+        <div class="privacy-section">
+            <h2>🔧 كيفية استخدام المعلومات</h2>
+            <p>نستخدم المعلومات التي نجمعها للأغراض التالية:</p>
+            <ul>
+                <li>تحسين وتطوير المنصة</li>
+                <li>تخصيص تجربتك</li>
+                <li>الرد على استفساراتكم</li>
+                <li>إرسال تحديثات (بموافقتك)</li>
+                <li>تحليل الأداء وإحصائيات الاستخدام</li>
+                <li>حماية المنصة من الاستخدام المسيء</li>
+            </ul>
+        </div>
+
+        <!-- ملفات تعريف الارتباط -->
+        <div class="privacy-section">
+            <h2>🍪 ملفات تعريف الارتباط (Cookies)</h2>
+            <p>نستخدم ملفات تعريف الارتباط لتحسين تجربتك. هذه الملفات تساعدنا في:</p>
+            <ul>
+                <li>تذكر تفضيلاتك (مثل اللغة المختارة)</li>
+                <li>فهم كيفية استخدامك للمنصة</li>
+                <li>تحسين سرعة وأداء الموقع</li>
+            </ul>
+            <p>يمكنك التحكم في ملفات تعريف الارتباط من خلال إعدادات المتصفح الخاص بك.</p>
+        </div>
+
+        <!-- مشاركة المعلومات -->
+        <div class="privacy-section">
+            <h2>🤝 مشاركة المعلومات</h2>
+            <p>نحن لا نبيع أو نؤجر معلوماتك الشخصية لأي طرف ثالث. قد نشارك المعلومات في الحالات التالية:</p>
+            <ul>
+                <li>بموافقتك الصريحة</li>
+                <li>لامتثال للقوانين واللوائح</li>
+                <li>لحماية حقوقنا القانونية</li>
+                <li>مع مقدمي الخدمة الموثوقين (تحت اتفاقيات سرية)</li>
+            </ul>
+        </div>
+
+        <!-- حماية المعلومات -->
+        <div class="privacy-section">
+            <h2>🔒 حماية المعلومات</h2>
+            <p>نطبق إجراءات أمنية مشددة لحماية معلوماتك:</p>
+            <ul>
+                <li>تشفير البيانات باستخدام SSL</li>
+                <li>جدران حماية متطورة</li>
+                <li>مراجعات أمنية دورية</li>
+                <li>صلاحيات وصول محدودة</li>
+                <li>نسخ احتياطي منتظم</li>
+            </ul>
+        </div>
+
+        <!-- حقوقك -->
+        <div class="privacy-section">
+            <h2>⚖️ حقوقك</h2>
+            <p>لديك الحق في:</p>
+            <ul>
+                <li>الوصول إلى بياناتك الشخصية</li>
+                <li>تصحيح أي بيانات غير دقيقة</li>
+                <li>طلب حذف بياناتك</li>
+                <li>الاعتراض على معالجة بياناتك</li>
+                <li>سحب الموافقة في أي وقت</li>
+                <li>تقديم شكوى للجهات الرقابية</li>
+            </ul>
+        </div>
+
+        <!-- خصوصية الأطفال -->
+        <div class="privacy-section">
+            <h2>🧒 خصوصية الأطفال</h2>
+            <p>منصتنا موجهة للعامة ولا نجمع عن قصد معلومات من الأطفال دون ١٣ سنة. إذا اكتشفنا جمع مثل هذه المعلومات، سنقوم بحذفها فوراً.</p>
+        </div>
+
+        <!-- التغييرات على السياسة -->
+        <div class="privacy-section">
+            <h2>📝 التغييرات على السياسة</h2>
+            <p>قد نقوم بتحديث هذه السياسة من وقت لآخر. سنقوم بإشعارك بالتغييرات الجوهرية عبر:</p>
+            <ul>
+                <li>نشر الإشعار على المنصة</li>
+                <li>إرسال بريد إلكتروني (إذا كان لدينا بريدك)</li>
+                <li>تحديث تاريخ آخر تعديل</li>
+            </ul>
+        </div>
+
+        <!-- موافقة المستخدم -->
+        <div class="consent-box">
+            <h3 style="color: #ffd700; margin-bottom: 1rem;">✅ الموافقة على سياسة الخصوصية</h3>
+            <p>باستخدامك لمنصتنا، فإنك توافق على سياسة الخصوصية هذه وشروط استخدامنا.</p>
+            <div class="consent-buttons">
+                <button class="consent-btn accept" onclick="alert('تم حفظ تفضيلاتك')">أوافق على السياسة</button>
+                <button class="consent-btn decline" onclick="if(confirm('سيتم توجيهك للصفحة الرئيسية')) window.location.href='index.html'">لا أوافق</button>
+            </div>
+        </div>
+
+        <!-- معلومات الاتصال -->
+        <div class="privacy-section">
+            <h2>📬 الاتصال بخصوص الخصوصية</h2>
+            <p>للاستفسارات المتعلقة بالخصوصية، يمكنك الاتصال بنا:</p>
+            <ul style="margin-top: 1rem;">
+                <li>📧 البريد: privacy@quran.com</li>
+                <li>📞 الهاتف: +966 55 123 4567</li>
+                <li>📍 العنوان: الرياض، المملكة العربية السعودية</li>
+            </ul>
+        </div>
+
+        <div class="update-date">
+            آخر تحديث: ٢٥ فبراير ٢٠٢٥
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>جميع الحقوق محفوظة © 2025 | القرآن الكريم</p>
+        <p style="margin-top: 1rem;">
+            <a href="about.html">من نحن</a> | 
+            <a href="contact.html">اتصل بنا</a> | 
+            <a href="privacy.html">سياسة الخصوصية</a>
+        </p>
+    </footer>
+</body>
+</html>
